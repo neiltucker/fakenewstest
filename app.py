@@ -15,10 +15,10 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_
 
 def fake_news_det(news):
     conn = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};'
-                          'Server=<fakenews.database.windows.net>.database.windows.net;'
-                          'Database=<fakenewsdetectionapp>;'
-                          'uid=<cdpteam>@<fakenews.database.windows.net>;'
-                          'pwd=<Password1>')
+                          'Server=fakenews.database.windows.net.database.windows.net;'
+                          'Database=fakenewsdetectionapp;'
+                          'uid=cdpteam@<fakenews.database.windows.net>;'
+                          'pwd=Password1')
     cursor = conn.cursor()
     cursor.execute('SELECT text, label FROM news')
     news_data = cursor.fetchall()
