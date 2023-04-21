@@ -17,7 +17,7 @@ def fake_news_det(news):
     conn = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};'
                           'Server=fakenews.database.windows.net.database.windows.net;'
                           'Database=fakenewsdetectionapp;'
-                          'uid=cdpteam@<fakenews.database.windows.net>;'
+                          'uid=cdpteam@fakenews.database.windows.net;'
                           'pwd=Password1')
     cursor = conn.cursor()
     cursor.execute('SELECT text, label FROM news')
